@@ -47,18 +47,20 @@ export function HomeHero() {
           style={{ backgroundImage: `url(${slide.image})` }}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/94 via-ink/66 to-ink/18" />
-      <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-ink/44 to-transparent lg:w-[58rem]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/82 via-ink/48 to-ink/10" />
+      <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-ink/54 to-transparent lg:w-[58rem]" />
       <div className="relative flex h-full min-h-[24rem] max-w-[58rem] flex-col justify-center px-5 pb-24 pt-8 text-white sm:min-h-[28rem] sm:px-8 lg:min-h-[30rem] lg:px-12 lg:pb-28 lg:pt-10">
         <p className="mb-4 w-fit rounded-2xl bg-coral px-4 py-2 text-base font-black text-white shadow-kiosk sm:text-xl lg:mb-5 lg:px-5 lg:py-3 lg:text-2xl">
           {t({ vi: "Đang trình chiếu thư viện", en: "Library slideshow" })}
         </p>
-        <h2 className="max-w-[54rem] text-[clamp(2.4rem,8vw,4.15rem)] font-black leading-[1.04] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.28)]">
-          {t(activeSlide.title)}
-        </h2>
-        <p className="mt-4 max-w-[48rem] text-lg font-bold leading-snug text-white/95 drop-shadow-[0_3px_12px_rgba(0,0,0,0.24)] sm:text-2xl lg:mt-6 lg:text-[1.62rem]">
-          {t(activeSlide.description)}
-        </p>
+        <div className="w-fit max-w-[54rem] rounded-[1.75rem] bg-ink/58 px-4 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.34)] ring-2 ring-white/18 backdrop-blur-sm sm:px-6 sm:py-5 lg:px-7">
+          <h2 className="max-w-[54rem] text-[clamp(2.4rem,8vw,4.15rem)] font-black leading-[1.04] text-white drop-shadow-[0_5px_18px_rgba(0,0,0,0.6)]">
+            {t(activeSlide.title)}
+          </h2>
+          <p className="mt-4 max-w-[48rem] text-lg font-black leading-snug text-white drop-shadow-[0_4px_14px_rgba(0,0,0,0.58)] sm:text-2xl lg:mt-5 lg:text-[1.62rem]">
+            {t(activeSlide.description)}
+          </p>
+        </div>
         <div
           className="absolute bottom-7 left-5 z-10 flex w-fit items-center gap-3 rounded-2xl bg-ink/22 p-3 backdrop-blur-sm sm:left-8 lg:bottom-10 lg:left-12 lg:gap-4"
           aria-label={t({
