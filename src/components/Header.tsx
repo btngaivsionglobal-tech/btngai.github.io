@@ -48,7 +48,7 @@ export function Header() {
             {language === "vi" ? "Kiosk thông tin" : "Information kiosk"}
           </p>
           <h1 className="text-2xl font-black leading-none text-ink sm:text-3xl lg:text-[2.35rem]">
-            {language === "vi" ? "Thư viện iREAD" : "iREAD Library"}
+            {language === "vi" ? "Thư viện Hòa Khánh" : "Hoa Khanh Library"}
           </h1>
         </div>
       </Link>
