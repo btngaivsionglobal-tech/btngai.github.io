@@ -1,7 +1,6 @@
 "use client";
 
 import { Languages } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -30,19 +29,9 @@ export function Header() {
     <header className="flex shrink-0 flex-col items-stretch gap-4 px-4 py-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-10 xl:px-12">
       <Link
         href="/"
-        className="flex min-w-0 items-center gap-3 rounded-2xl outline-none transition active:scale-[0.98] sm:gap-5 lg:gap-6"
+        className="flex min-w-0 rounded-2xl outline-none transition active:scale-[0.98]"
         aria-label={language === "vi" ? "Về trang chủ" : "Go to home"}
       >
-        <div className="flex h-12 w-36 shrink-0 items-center justify-center sm:h-14 sm:w-44 lg:h-16 lg:w-48">
-          <Image
-            src="/images/logo-iread-transparent.png"
-            alt="iREAD"
-            width={875}
-            height={304}
-            priority
-            className="h-auto w-full"
-          />
-        </div>
         <div className="min-w-0">
           <p className="text-xs font-black uppercase text-coral sm:text-base lg:text-xl lg:tracking-[0.22em]">
             {language === "vi" ? "Kiosk thông tin" : "Information kiosk"}
