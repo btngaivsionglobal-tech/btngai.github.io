@@ -61,7 +61,7 @@ export default function MapPage() {
     >
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.35fr_0.65fr] xl:gap-8">
         <section className="rounded-[1.5rem] bg-white p-3 shadow-kiosk ring-4 ring-white sm:p-4 lg:rounded-[2rem]">
-          <div className="relative aspect-[1800/1552] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
+          <div className="relative aspect-[1800/1440] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
             <Image
               src={activeFloor.src}
               alt={t(activeFloor.alt)}
