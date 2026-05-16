@@ -1,0 +1,8 @@
+<svg width="360" height="160" viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="360" height="160" rx="34" fill="#F5F8FF"/>
+  <circle cx="70" cy="80" r="44" fill="#2958FF"/>
+  <path d="M46 61C46 56 50 52 55 52H84C96 52 105 61 105 73C105 84 97 93 86 95L105 111H86L68 96H61V111H46V61ZM61 66V82H83C87 82 90 79 90 74C90 69 87 66 83 66H61Z" fill="white"/>
+  <text x="130" y="70" fill="#1F2A44" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">Reading</text>
+  <text x="130" y="100" fill="#1F2A44" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">On Your Head</text>
+  <path d="M131 116H282" stroke="#FFB627" stroke-width="8" stroke-linecap="round"/>
+</svg>
