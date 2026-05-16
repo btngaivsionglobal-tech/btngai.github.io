@@ -2,9 +2,18 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import {
+  BookOpen,
+  Home,
+  LibraryBig,
+  Monitor,
+  Users,
+  Video,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
+import type { LocalizedText } from "@/components/LanguageProvider";
 import { PageShell } from "@/components/PageShell";
-import { floorZones } from "@/data/kiosk";
 
 const floorMapImages = [
   {
@@ -29,14 +38,72 @@ const floorMapImages = [
 
 type FloorMap = (typeof floorMapImages)[number];
 
-const zoneIconStyles: Record<string, string> = {
-  "bg-coral": "bg-coral shadow-coral/30 ring-coral/20",
-  "bg-teal": "bg-teal shadow-teal/30 ring-teal/20",
-  "bg-amber": "bg-amber shadow-amber/30 ring-amber/20",
-  "bg-leaf": "bg-leaf shadow-leaf/30 ring-leaf/20",
-  "bg-sky-500": "bg-sky-500 shadow-sky-500/30 ring-sky-500/20",
-  "bg-rose-500": "bg-rose-500 shadow-rose-500/30 ring-rose-500/20",
+type MapZone = {
+  floorId: FloorMap["id"];
+  floor: LocalizedText;
+  name: LocalizedText;
+  icon: LucideIcon;
+  color: string;
 };
+
+const mapZones: MapZone[] = [
+  {
+    floorId: "floor-1",
+    floor: { vi: "Tầng 1", en: "Floor 1" },
+    name: { vi: "Phòng đọc thiếu nhi", en: "Children reading room" },
+    icon: BookOpen,
+    color: "bg-coral shadow-coral/30 ring-coral/20",
+  },
+  {
+    floorId: "floor-1",
+    floor: { vi: "Tầng 1", en: "Floor 1" },
+    name: { vi: "Phòng đọc thiếu niên", en: "Teen reading room" },
+    icon: LibraryBig,
+    color: "bg-teal shadow-teal/30 ring-teal/20",
+  },
+  {
+    floorId: "floor-1",
+    floor: { vi: "Tầng 1", en: "Floor 1" },
+    name: { vi: "Sảnh chờ", en: "Waiting lounge" },
+    icon: Home,
+    color: "bg-amber shadow-amber/30 ring-amber/20",
+  },
+  {
+    floorId: "floor-2",
+    floor: { vi: "Tầng 2", en: "Floor 2" },
+    name: { vi: "Phòng hội thảo", en: "Conference room" },
+    icon: Users,
+    color: "bg-coral shadow-coral/30 ring-coral/20",
+  },
+  {
+    floorId: "floor-2",
+    floor: { vi: "Tầng 2", en: "Floor 2" },
+    name: { vi: "Phòng truyền thống", en: "Tradition room" },
+    icon: LibraryBig,
+    color: "bg-teal shadow-teal/30 ring-teal/20",
+  },
+  {
+    floorId: "floor-2",
+    floor: { vi: "Tầng 2", en: "Floor 2" },
+    name: { vi: "Sảnh đọc sách", en: "Reading hall" },
+    icon: BookOpen,
+    color: "bg-amber shadow-amber/30 ring-amber/20",
+  },
+  {
+    floorId: "floor-2",
+    floor: { vi: "Tầng 2", en: "Floor 2" },
+    name: { vi: "Phòng nội dung số", en: "Digital content room" },
+    icon: Monitor,
+    color: "bg-sky-500 shadow-sky-500/30 ring-sky-500/20",
+  },
+  {
+    floorId: "floor-2",
+    floor: { vi: "Tầng 2", en: "Floor 2" },
+    name: { vi: "Phòng studio", en: "Studio room" },
+    icon: Video,
+    color: "bg-rose-500 shadow-rose-500/30 ring-rose-500/20",
+  },
+];
 
 export default function MapPage() {
   const { t } = useLanguage();
@@ -47,9 +114,7 @@ export default function MapPage() {
     [activeFloorId],
   );
 
-  const activeZones = floorZones.filter(
-    (zone) => zone.floor.vi === activeFloor.floor.vi,
-  );
+  const activeZones = mapZones.filter((zone) => zone.floorId === activeFloor.id);
 
   return (
     <PageShell
@@ -102,10 +167,10 @@ export default function MapPage() {
 
             return (
               <div
-                key={`${zone.floor.vi}-${zone.name.vi}`}
+                key={`${zone.floorId}-${zone.name.vi}`}
                 className="flex min-h-28 items-center gap-4 rounded-3xl bg-white p-5 shadow-kiosk ring-2 ring-white/80 sm:gap-5 sm:p-6"
               >
-                <span className={`grid h-16 w-16 shrink-0 place-items-center rounded-2xl text-white shadow-lg ring-4 sm:h-[72px] sm:w-[72px] ${zoneIconStyles[zone.color] ?? zoneIconStyles["bg-coral"]}`}>
+                <span className={`grid h-16 w-16 shrink-0 place-items-center rounded-2xl text-white shadow-lg ring-4 sm:h-[72px] sm:w-[72px] ${zone.color}`}>
                   <Icon className="h-9 w-9 stroke-[2.8] sm:h-10 sm:w-10" />
                 </span>
                 <div className="min-w-0">
