@@ -114,15 +114,16 @@ export default function SearchPage() {
       }}
     >
       <div className="grid gap-6">
-        <div className="sticky top-0 z-40 -mx-4 grid gap-4 border-b-4 border-white bg-white/96 px-4 pb-4 pt-4 shadow-kiosk backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 lg:pt-8">
+        <div className="h-[23rem] sm:h-[24rem] lg:h-[18rem]" />
+        <div className="fixed left-0 right-0 top-0 z-50 grid gap-3 border-b-4 border-white bg-white/96 px-4 pb-4 pt-3 shadow-kiosk backdrop-blur sm:px-6 lg:px-10 xl:px-12">
           <label className="relative block">
             <Search
-              className="pointer-events-none absolute left-5 top-1/2 h-7 w-7 -translate-y-1/2 text-coral sm:left-8 sm:h-9 sm:w-9"
+              className="pointer-events-none absolute left-5 top-1/2 h-7 w-7 -translate-y-1/2 text-coral sm:left-8 sm:h-8 sm:w-8"
             />
             <input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              className="h-16 w-full rounded-2xl border-4 border-coral/20 bg-white pl-14 pr-4 text-lg font-bold text-ink outline-none ring-0 placeholder:text-ink/34 focus:border-coral sm:h-20 sm:pl-20 sm:pr-8 sm:text-2xl lg:text-3xl"
+              className="h-14 w-full rounded-2xl border-4 border-coral/20 bg-white pl-14 pr-4 text-lg font-bold text-ink outline-none ring-0 placeholder:text-ink/34 focus:border-coral sm:h-16 sm:pl-20 sm:pr-8 sm:text-2xl"
               placeholder={t({
                 vi: "Nhập tên sách, tác giả, thể loại, ebook hoặc audiobook...",
                 en: "Enter title, author, category, ebook or audiobook...",
@@ -130,13 +131,13 @@ export default function SearchPage() {
             />
           </label>
 
-          <div className="flex flex-col gap-4 rounded-2xl bg-mist px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-6">
+          <div className="flex flex-col gap-3 rounded-2xl bg-mist px-4 py-3 lg:flex-row lg:items-center lg:justify-between lg:px-6">
             <div>
-              <p className="text-lg font-black text-ink sm:text-xl">
+              <p className="text-base font-black text-ink sm:text-lg">
                 {filteredBooks.length.toLocaleString("vi-VN")}{" "}
                 {t({ vi: "tài liệu được tìm thấy", en: "items found" })}
               </p>
-              <p className="mt-1 text-base font-bold text-ink/58 sm:text-lg">
+              <p className="mt-1 text-sm font-bold text-ink/58 sm:text-base">
                 {t({
                   vi: `Hiển thị tối đa ${MAX_VISIBLE_RESULTS} kết quả đầu tiên để kiosk chạy mượt.`,
                   en: `Showing up to the first ${MAX_VISIBLE_RESULTS} results for smooth kiosk performance.`,
@@ -147,7 +148,7 @@ export default function SearchPage() {
               <button
                 type="button"
                 onClick={() => setCatalogMode("ebook")}
-                className={`inline-flex h-12 w-full select-none items-center justify-center whitespace-nowrap rounded-2xl px-4 text-base font-black leading-none outline-none transition active:scale-[0.98] sm:h-14 sm:text-xl lg:w-52 lg:px-5 ${
+                className={`inline-flex h-11 w-full select-none items-center justify-center whitespace-nowrap rounded-2xl px-4 text-base font-black leading-none outline-none transition active:scale-[0.98] sm:h-12 sm:text-lg lg:w-52 lg:px-5 ${
                   catalogMode === "ebook"
                     ? "bg-coral text-white shadow-kiosk"
                     : "bg-white text-ink shadow-kiosk"
@@ -158,7 +159,7 @@ export default function SearchPage() {
               <button
                 type="button"
                 onClick={() => setCatalogMode("audiobook")}
-                className={`inline-flex h-12 w-full select-none items-center justify-center whitespace-nowrap rounded-2xl px-4 text-base font-black leading-none outline-none transition active:scale-[0.98] sm:h-14 sm:text-xl lg:w-60 lg:px-5 ${
+                className={`inline-flex h-11 w-full select-none items-center justify-center whitespace-nowrap rounded-2xl px-4 text-base font-black leading-none outline-none transition active:scale-[0.98] sm:h-12 sm:text-lg lg:w-60 lg:px-5 ${
                   catalogMode === "audiobook"
                     ? "bg-ink text-white shadow-kiosk"
                     : "bg-white text-ink shadow-kiosk"
@@ -170,7 +171,7 @@ export default function SearchPage() {
           </div>
 
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
-            <p className="text-lg font-black text-ink sm:text-xl">
+            <p className="text-base font-black text-ink sm:text-lg">
               {t({ vi: "Lọc theo cấp", en: "Filter by grade" })}
             </p>
             <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
@@ -179,7 +180,7 @@ export default function SearchPage() {
                   key={grade.id}
                   type="button"
                   onClick={() => setGradeFilter(grade.id)}
-                  className={`inline-flex h-11 min-w-0 select-none items-center justify-center rounded-2xl px-4 text-base font-black leading-none outline-none transition active:scale-[0.98] sm:h-12 sm:min-w-28 sm:px-5 sm:text-lg ${
+                  className={`inline-flex h-10 min-w-0 select-none items-center justify-center rounded-2xl px-4 text-base font-black leading-none outline-none transition active:scale-[0.98] sm:h-11 sm:min-w-28 sm:px-5 ${
                     gradeFilter === grade.id
                       ? "bg-coral text-white shadow-kiosk"
                       : "bg-mist text-ink"
