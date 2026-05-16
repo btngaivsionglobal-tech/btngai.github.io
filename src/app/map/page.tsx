@@ -124,8 +124,8 @@ export default function MapPage() {
         en: "Choose a floor to view its map and matching areas.",
       }}
     >
-      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.35fr_0.65fr] xl:gap-8">
-        <section className="rounded-[1.5rem] bg-white p-3 shadow-kiosk ring-4 ring-white sm:p-4 lg:rounded-[2rem]">
+      <div className="grid grid-cols-1 gap-4 xl:grid-cols-[1.35fr_0.65fr] xl:gap-6">
+        <section className="rounded-[1.25rem] bg-white p-2 shadow-kiosk ring-4 ring-white sm:p-3 lg:rounded-[2rem]">
           <div className="relative aspect-[1800/1440] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
             <Image
               src={activeFloor.src}
@@ -139,8 +139,8 @@ export default function MapPage() {
           </div>
         </section>
 
-        <aside className="grid content-start gap-4">
-          <div className="grid grid-cols-2 gap-3 rounded-3xl bg-white p-3 shadow-kiosk">
+        <aside className="grid content-start gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 gap-2 rounded-3xl bg-white p-2 shadow-kiosk sm:gap-3 sm:p-3">
             {floorMapImages.map((mapImage) => {
               const isActive = mapImage.id === activeFloor.id;
 
@@ -150,7 +150,7 @@ export default function MapPage() {
                   type="button"
                   aria-pressed={isActive}
                   onClick={() => setActiveFloorId(mapImage.id)}
-                  className={`flex min-h-20 items-center justify-center rounded-2xl px-4 text-center text-2xl font-black transition sm:text-3xl ${
+                  className={`flex min-h-14 items-center justify-center rounded-2xl px-3 text-center text-xl font-black transition sm:min-h-16 sm:text-2xl lg:min-h-18 lg:text-3xl ${
                     isActive
                       ? "bg-coral text-white shadow-lg shadow-coral/25"
                       : "bg-mist text-ink hover:bg-white"
@@ -168,16 +168,16 @@ export default function MapPage() {
             return (
               <div
                 key={`${zone.floorId}-${zone.name.vi}`}
-                className="flex min-h-28 items-center gap-4 rounded-3xl bg-white p-5 shadow-kiosk ring-2 ring-white/80 sm:gap-5 sm:p-6"
+                className="flex min-h-20 items-center gap-3 rounded-3xl bg-white p-3 shadow-kiosk ring-2 ring-white/80 sm:min-h-24 sm:gap-4 sm:p-4 lg:min-h-28 lg:p-5"
               >
-                <span className={`grid h-16 w-16 shrink-0 place-items-center rounded-2xl text-white shadow-lg ring-4 sm:h-[72px] sm:w-[72px] ${zone.color}`}>
-                  <Icon className="h-9 w-9 stroke-[2.8] sm:h-10 sm:w-10" />
+                <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-white shadow-lg ring-4 sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px] ${zone.color}`}>
+                  <Icon className="h-8 w-8 stroke-[2.8] sm:h-9 sm:w-9 lg:h-10 lg:w-10" />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-base font-black uppercase tracking-[0.12em] text-ink/48 sm:text-xl sm:tracking-[0.14em]">
+                  <p className="text-sm font-black uppercase tracking-[0.12em] text-ink/48 sm:text-base lg:text-xl lg:tracking-[0.14em]">
                     {t(zone.floor)}
                   </p>
-                  <h3 className="text-2xl font-black text-ink sm:text-3xl">{t(zone.name)}</h3>
+                  <h3 className="text-xl font-black text-ink sm:text-2xl lg:text-3xl">{t(zone.name)}</h3>
                 </div>
               </div>
             );

@@ -15,21 +15,21 @@ export default function ServicesPage() {
         en: "Common services for readers, students, and faculty.",
       }}
     >
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-5">
         {services.map((service) => {
           const Icon = service.icon;
           return (
-            <article key={service.title.vi} className="rounded-3xl bg-mist p-5 sm:p-8">
-              <div className="flex items-center gap-4 sm:gap-5">
-                <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-coral text-white sm:h-20 sm:w-20">
-                  <Icon className="h-8 w-8 sm:h-[42px] sm:w-[42px]" />
+            <article key={service.title.vi} className="rounded-3xl bg-mist p-4 sm:p-5 lg:p-6">
+              <div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-coral text-white sm:h-16 sm:w-16 lg:h-20 lg:w-20">
+                  <Icon className="h-7 w-7 sm:h-8 sm:w-8 lg:h-[42px] lg:w-[42px]" />
                 </span>
                 <div className="min-w-0">
-                  <h3 className="text-2xl font-black text-ink sm:text-3xl xl:text-4xl">{t(service.title)}</h3>
-                  <p className="mt-2 text-lg font-black text-coral sm:text-2xl">{t(service.meta)}</p>
+                  <h3 className="text-xl font-black text-ink sm:text-2xl xl:text-4xl">{t(service.title)}</h3>
+                  <p className="mt-1 text-base font-black text-coral sm:text-xl lg:text-2xl">{t(service.meta)}</p>
                 </div>
               </div>
-              <p className="mt-5 text-xl font-semibold leading-snug text-ink/70 sm:mt-6 sm:text-2xl xl:text-3xl">
+              <p className="mt-4 text-base font-semibold leading-snug text-ink/70 sm:text-xl xl:text-2xl">
                 {t(service.description)}
               </p>
             </article>

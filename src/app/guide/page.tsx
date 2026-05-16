@@ -16,14 +16,14 @@ export default function GuidePage() {
         en: "Follow these quick steps to find and borrow library materials.",
       }}
     >
-      <ol className="grid gap-5">
+      <ol className="grid gap-3 sm:gap-4 lg:gap-5">
         {guideSteps.map((step, index) => (
-          <li key={step.vi} className="flex items-start gap-4 rounded-3xl bg-mist p-5 sm:items-center sm:gap-6 sm:p-7">
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-coral text-2xl font-black text-white sm:h-20 sm:w-20 sm:text-4xl">
+          <li key={step.vi} className="flex items-start gap-3 rounded-3xl bg-mist p-4 sm:items-center sm:gap-5 sm:p-5 lg:gap-6 lg:p-6">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-coral text-xl font-black text-white sm:h-16 sm:w-16 sm:text-3xl lg:h-20 lg:w-20 lg:text-4xl">
               {index + 1}
             </span>
-            <p className="text-xl font-bold leading-snug text-ink sm:text-3xl">{t(step)}</p>
-            <CheckCircle2 className="ml-auto hidden shrink-0 text-coral sm:block" size={46} />
+            <p className="text-lg font-bold leading-snug text-ink sm:text-2xl lg:text-3xl">{t(step)}</p>
+            <CheckCircle2 className="ml-auto hidden shrink-0 text-coral sm:block lg:h-[46px] lg:w-[46px]" size={36} />
           </li>
         ))}
       </ol>

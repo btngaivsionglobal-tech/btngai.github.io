@@ -132,54 +132,54 @@ export default function EventsPage() {
         en: "Quick access to EBooks, AudioBooks, and online learning resources.",
       }}
     >
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 xl:gap-5">
         {digitalLibraries.map((site) => (
           <a
             key={site.domain}
             href={site.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group flex min-h-[24rem] flex-col justify-between rounded-[1.5rem] bg-gradient-to-br ${site.tone} p-5 shadow-kiosk ring-4 ring-white transition active:scale-[0.98] sm:min-h-[28rem] sm:p-6 xl:min-h-[30rem] xl:rounded-[2rem]`}
+            className={`group flex min-h-[18rem] flex-col justify-between rounded-[1.25rem] bg-gradient-to-br ${site.tone} p-4 shadow-kiosk ring-4 ring-white transition active:scale-[0.98] sm:min-h-[22rem] sm:p-5 xl:min-h-[24rem] xl:rounded-[2rem]`}
           >
             <div>
-              <div className="grid h-28 place-items-center overflow-hidden rounded-[1.5rem] bg-white p-4 shadow-kiosk sm:h-36 sm:p-5">
+              <div className="grid h-20 place-items-center overflow-hidden rounded-[1.25rem] bg-white p-3 shadow-kiosk sm:h-28 sm:p-4 xl:h-32">
                 {site.logo ? (
                   <Image
                     src={site.logo}
                     alt={`${site.name} logo`}
                     width={360}
                     height={160}
-                    className="max-h-20 w-full object-contain sm:max-h-28"
+                    className="max-h-14 w-full object-contain sm:max-h-20 xl:max-h-24"
                   />
                 ) : (
                   <span
-                    className={`whitespace-pre-line text-center text-2xl font-black leading-tight sm:text-[2rem] ${site.logoTone ?? ""}`}
+                    className={`whitespace-pre-line text-center text-xl font-black leading-tight sm:text-2xl xl:text-[2rem] ${site.logoTone ?? ""}`}
                   >
                     {site.logoText}
                   </span>
                 )}
               </div>
 
-              <div className="mt-5 flex items-start gap-4 sm:mt-6">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-coral text-white sm:h-14 sm:w-14">
-                  <Globe2 className="h-7 w-7 sm:h-[30px] sm:w-[30px]" />
+              <div className="mt-4 flex items-start gap-3 sm:mt-5 sm:gap-4">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-coral text-white sm:h-12 sm:w-12 xl:h-14 xl:w-14">
+                  <Globe2 className="h-6 w-6 sm:h-7 sm:w-7 xl:h-[30px] xl:w-[30px]" />
                 </span>
                 <div className="min-w-0">
-                  <h3 className="text-2xl font-black leading-tight text-ink sm:text-[1.65rem]">
+                  <h3 className="text-xl font-black leading-tight text-ink sm:text-2xl xl:text-[1.65rem]">
                     {t({ vi: site.name, en: site.englishName })}
                   </h3>
-                  <p className="mt-2 break-words text-lg font-black text-coral sm:text-xl">{site.domain}</p>
+                  <p className="mt-1 break-words text-base font-black text-coral sm:text-lg xl:text-xl">{site.domain}</p>
                 </div>
               </div>
 
-              <p className="mt-5 text-lg font-semibold leading-snug text-ink/68 sm:text-[1.35rem]">
+              <p className="mt-4 text-base font-semibold leading-snug text-ink/68 sm:text-lg xl:text-[1.25rem]">
                 {t(site.description)}
               </p>
             </div>
 
-            <div className="mt-6 inline-flex h-14 items-center justify-center gap-3 rounded-2xl bg-ink px-5 text-lg font-black text-white sm:mt-8 sm:h-16 sm:px-6 sm:text-2xl">
+            <div className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-ink px-4 text-base font-black text-white sm:h-14 sm:text-xl xl:mt-6 xl:h-16 xl:px-6 xl:text-2xl">
               {t({ vi: "Mở website", en: "Open website" })}
-              <ExternalLink className="h-7 w-7 sm:h-[30px] sm:w-[30px]" />
+              <ExternalLink className="h-6 w-6 sm:h-7 sm:w-7 xl:h-[30px] xl:w-[30px]" />
             </div>
           </a>
         ))}
