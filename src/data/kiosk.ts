@@ -91,28 +91,36 @@ export const menuItems: MenuItem[] = [
 
 export const homeSlides = [
   {
-    title: { vi: "Chào mừng đến thư viện", en: "Welcome to the library" },
+    title: { vi: "Khu cafe đọc sách", en: "Reading cafe" },
     description: {
-      vi: "Không gian học tập mở, hiện đại và thân thiện cho mọi bạn đọc.",
-      en: "An open, modern, and friendly study space for every reader.",
+      vi: "Không gian thư giãn xanh mát để đọc sách, trao đổi và nghỉ ngơi.",
+      en: "A relaxed green space for reading, conversation, and a quiet pause.",
     },
-    image: "/images/library-slide-welcome.png",
+    image: "/images/library-banner-1.jpg",
   },
   {
-    title: { vi: "Tra cứu tài liệu nhanh chóng", en: "Search materials quickly" },
+    title: { vi: "Sảnh đọc sách thư giãn", en: "Relaxed reading hall" },
     description: {
-      vi: "Nhập tên sách, tác giả hoặc chủ đề để xem ngay vị trí trên kệ.",
-      en: "Enter a title, author, or topic to see the shelf location instantly.",
+      vi: "Khu đọc mở với bậc ngồi, cây xanh và ánh sáng nhẹ nhàng.",
+      en: "An open reading hall with stepped seating, greenery, and soft light.",
     },
-    image: "/images/library-slide-search.png",
+    image: "/images/library-banner-2.jpg",
   },
   {
-    title: { vi: "Sự kiện tuần này", en: "Events this week" },
+    title: { vi: "Phòng đọc thiếu nhi", en: "Children reading room" },
     description: {
-      vi: "Tham gia workshop kỹ năng thông tin và giờ đọc sách cộng đồng.",
-      en: "Join information skills workshops and community reading sessions.",
+      vi: "Không gian học tập thân thiện dành cho thiếu nhi khám phá tri thức.",
+      en: "A friendly learning space where children can explore knowledge.",
     },
-    image: "/images/library-slide-events.png",
+    image: "/images/library-banner-3.jpg",
+  },
+  {
+    title: { vi: "Phòng đọc thiếu niên", en: "Teen reading room" },
+    description: {
+      vi: "Khu đọc hiện đại dành cho thiếu niên học nhóm, tra cứu và đọc sách.",
+      en: "A modern reading area for teens to study, research, and read.",
+    },
+    image: "/images/library-banner-4.jpg",
   },
 ];
 
