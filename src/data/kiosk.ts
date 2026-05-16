@@ -91,20 +91,20 @@ export const menuItems: MenuItem[] = [
 
 export const homeSlides = [
   {
-    title: { vi: "Khu cafe đọc sách", en: "Reading cafe" },
-    description: {
-      vi: "Không gian thư giãn xanh mát để đọc sách, trao đổi và nghỉ ngơi.",
-      en: "A relaxed green space for reading, conversation, and a quiet pause.",
-    },
-    image: "/images/library-banner-1.jpg",
-  },
-  {
     title: { vi: "Sảnh đọc sách thư giãn", en: "Relaxed reading hall" },
     description: {
       vi: "Khu đọc mở với bậc ngồi, cây xanh và ánh sáng nhẹ nhàng.",
       en: "An open reading hall with stepped seating, greenery, and soft light.",
     },
     image: "/images/library-banner-2.jpg",
+  },
+  {
+    title: { vi: "Khu cafe đọc sách", en: "Reading cafe" },
+    description: {
+      vi: "Không gian thư giãn xanh mát để đọc sách, trao đổi và nghỉ ngơi.",
+      en: "A relaxed green space for reading, conversation, and a quiet pause.",
+    },
+    image: "/images/library-banner-1.jpg",
   },
   {
     title: { vi: "Phòng đọc thiếu nhi", en: "Children reading room" },
