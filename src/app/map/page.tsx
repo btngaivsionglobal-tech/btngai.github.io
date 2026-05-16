@@ -5,6 +5,25 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { PageShell } from "@/components/PageShell";
 import { floorZones } from "@/data/kiosk";
 
+const floorMapImages = [
+  {
+    floor: { vi: "Tầng 1", en: "Floor 1" },
+    src: "/images/library-map-floor-1.jpg",
+    alt: {
+      vi: "Sơ đồ tầng 1 thư viện số Hòa Khánh",
+      en: "Hoa Khanh digital library floor 1 map",
+    },
+  },
+  {
+    floor: { vi: "Tầng 2", en: "Floor 2" },
+    src: "/images/library-map-floor-2.jpg",
+    alt: {
+      vi: "Sơ đồ tầng 2 thư viện số Hòa Khánh",
+      en: "Hoa Khanh digital library floor 2 map",
+    },
+  },
+];
+
 export default function MapPage() {
   const { t } = useLanguage();
 
@@ -17,17 +36,30 @@ export default function MapPage() {
       }}
     >
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.35fr_0.65fr] xl:gap-8">
-        <div className="rounded-[1.5rem] bg-white p-3 shadow-kiosk ring-4 ring-white sm:p-4 lg:rounded-[2rem]">
-          <div className="relative aspect-[2048/1024] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
-            <Image
-              src="/images/library-map-hoakhanh.jpg"
-              alt={t({ vi: "Sơ đồ thư viện số Hòa Khánh tầng 1 và tầng 2", en: "Hoa Khanh digital library floor plans for floors 1 and 2" })}
-              fill
-              priority
-              sizes="(min-width: 1280px) 65vw, 100vw"
-              className="object-contain"
-            />
-          </div>
+        <div className="grid gap-5">
+          {floorMapImages.map((mapImage, index) => (
+            <section
+              key={mapImage.src}
+              className="rounded-[1.5rem] bg-white p-3 shadow-kiosk ring-4 ring-white sm:p-4 lg:rounded-[2rem]"
+            >
+              <div className="mb-3 flex items-center justify-between px-1 sm:mb-4">
+                <h2 className="text-2xl font-black text-ink sm:text-3xl">
+                  {t(mapImage.floor)}
+                </h2>
+              </div>
+              <div className="relative aspect-[1800/1312] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
+                <Image
+                  src={mapImage.src}
+                  alt={t(mapImage.alt)}
+                  fill
+                  priority={index === 0}
+                  quality={100}
+                  sizes="(min-width: 1280px) 65vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+            </section>
+          ))}
         </div>
 
         <div className="grid gap-4">
