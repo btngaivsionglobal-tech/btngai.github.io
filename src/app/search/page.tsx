@@ -1,9 +1,11 @@
 "use client";
 
-import { BookOpen, Headphones, Search } from "lucide-react";
+import { ArrowLeft, BookOpen, Headphones, Home, Search } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import { Header } from "@/components/Header";
 import { type Language, useLanguage } from "@/components/LanguageProvider";
-import { PageShell } from "@/components/PageShell";
 import audiobooks from "@/data/audiobooks.json";
 import ebooks from "@/data/ebooks.json";
 
@@ -30,6 +32,7 @@ const libraryItems: LibraryItem[] = [
     format: "audiobook" as const,
   })),
 ];
+
 const MAX_VISIBLE_RESULTS = 80;
 type CatalogMode = "ebook" | "audiobook";
 type GradeFilter = "all" | "cap1" | "cap2" | "cap3";
@@ -61,6 +64,7 @@ function formatLevel(level: string, language: Language) {
 }
 
 export default function SearchPage() {
+  const router = useRouter();
   const { language, t } = useLanguage();
   const [query, setQuery] = useState("");
   const [catalogMode, setCatalogMode] = useState<CatalogMode>("ebook");
@@ -106,16 +110,42 @@ export default function SearchPage() {
   const visibleBooks = filteredBooks.slice(0, MAX_VISIBLE_RESULTS);
 
   return (
-    <PageShell
-      title={{ vi: "Tra cứu tài liệu", en: "Catalog search" }}
-      description={{
-        vi: "Tra cứu danh mục EBook và AudioBook theo tên sách, tác giả, thể loại hoặc nhà xuất bản.",
-        en: "Search EBooks and AudioBooks by title, author, category, or publisher.",
-      }}
-    >
-      <div className="grid gap-6">
-        <div className="h-[23rem] sm:h-[24rem] lg:h-[18rem]" />
-        <div className="fixed left-0 right-0 top-0 z-50 grid gap-3 border-b-4 border-white bg-white/96 px-4 pb-4 pt-3 shadow-kiosk backdrop-blur sm:px-6 lg:px-10 xl:px-12">
+    <main className="flex h-screen flex-col overflow-hidden">
+      <Header />
+
+      <section className="flex min-h-0 flex-1 flex-col px-4 pb-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="mb-4 flex shrink-0 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div className="min-w-0">
+            <h2 className="text-[clamp(2rem,5vw,3.15rem)] font-black leading-tight text-ink">
+              {t({ vi: "Tra cứu tài liệu", en: "Catalog search" })}
+            </h2>
+            <p className="mt-2 max-w-5xl text-base font-bold leading-snug text-ink/68 sm:text-lg lg:text-xl">
+              {t({
+                vi: "Tra cứu danh mục EBook và AudioBook theo tên sách, tác giả, thể loại hoặc nhà xuất bản.",
+                en: "Search EBooks and AudioBooks by title, author, category, or publisher.",
+              })}
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-wrap gap-3 lg:gap-4">
+            <button
+              type="button"
+              onClick={() => router.back()}
+              className="flex min-h-12 items-center gap-2 rounded-2xl bg-white px-5 text-lg font-bold text-ink shadow-kiosk active:scale-[0.98] sm:min-h-14 sm:text-xl lg:px-6"
+            >
+              <ArrowLeft className="h-7 w-7" />
+              {t({ vi: "Quay lại", en: "Back" })}
+            </button>
+            <Link
+              href="/"
+              className="flex min-h-12 items-center gap-2 rounded-2xl bg-coral px-5 text-lg font-bold text-white shadow-kiosk active:scale-[0.98] sm:min-h-14 sm:text-xl lg:px-6"
+            >
+              <Home className="h-7 w-7" />
+              {t({ vi: "Trang chủ", en: "Home" })}
+            </Link>
+          </div>
+        </div>
+
+        <div className="shrink-0 rounded-[1.5rem] bg-white/92 p-4 shadow-kiosk ring-4 ring-white/70 backdrop-blur lg:rounded-[2rem]">
           <label className="relative block">
             <Search
               className="pointer-events-none absolute left-5 top-1/2 h-7 w-7 -translate-y-1/2 text-coral sm:left-8 sm:h-8 sm:w-8"
@@ -131,7 +161,7 @@ export default function SearchPage() {
             />
           </label>
 
-          <div className="flex flex-col gap-3 rounded-2xl bg-mist px-4 py-3 lg:flex-row lg:items-center lg:justify-between lg:px-6">
+          <div className="mt-3 flex flex-col gap-3 rounded-2xl bg-mist px-4 py-3 lg:flex-row lg:items-center lg:justify-between lg:px-6">
             <div>
               <p className="text-base font-black text-ink sm:text-lg">
                 {filteredBooks.length.toLocaleString("vi-VN")}{" "}
@@ -170,7 +200,7 @@ export default function SearchPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
+          <div className="mt-3 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
             <p className="text-base font-black text-ink sm:text-lg">
               {t({ vi: "Lọc theo cấp", en: "Filter by grade" })}
             </p>
@@ -193,85 +223,87 @@ export default function SearchPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-5">
-          {visibleBooks.map((book) => (
-            <article key={`${book.bookId}-${book.stt}`} className="rounded-3xl bg-white p-5 shadow-kiosk sm:p-6">
-              <div className="flex items-start gap-4 sm:gap-5">
-                <span
-                  className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-white sm:h-16 sm:w-16 ${
-                    book.format === "ebook" ? "bg-coral" : "bg-ink"
-                  }`}
-                >
-                  {book.format === "ebook" ? (
-                    <BookOpen className="h-7 w-7 sm:h-[34px] sm:w-[34px]" />
-                  ) : (
-                    <Headphones className="h-7 w-7 sm:h-[34px] sm:w-[34px]" />
-                  )}
-                </span>
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span
-                      className={`rounded-full px-3 py-2 text-sm font-black sm:px-4 sm:text-lg ${
-                        book.format === "ebook"
-                          ? "bg-coral text-white"
-                          : "bg-ink text-white"
-                      }`}
-                    >
-                      {book.format === "ebook" ? "EBook" : "AudioBook"}
-                    </span>
-                    {book.level && (
-                      <span className="rounded-full bg-coral/12 px-3 py-2 text-sm font-black text-coral sm:px-4 sm:text-lg">
-                        {formatLevel(book.level, language)}
-                      </span>
+        <div className="mt-5 min-h-0 flex-1 overflow-y-auto rounded-[1.5rem] bg-white/50 p-4 shadow-kiosk kiosk-scroll sm:p-6 lg:rounded-[2rem]">
+          <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-5">
+            {visibleBooks.map((book) => (
+              <article key={`${book.bookId}-${book.stt}`} className="rounded-3xl bg-white p-5 shadow-kiosk sm:p-6">
+                <div className="flex items-start gap-4 sm:gap-5">
+                  <span
+                    className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-white sm:h-16 sm:w-16 ${
+                      book.format === "ebook" ? "bg-coral" : "bg-ink"
+                    }`}
+                  >
+                    {book.format === "ebook" ? (
+                      <BookOpen className="h-7 w-7 sm:h-[34px] sm:w-[34px]" />
+                    ) : (
+                      <Headphones className="h-7 w-7 sm:h-[34px] sm:w-[34px]" />
                     )}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span
+                        className={`rounded-full px-3 py-2 text-sm font-black sm:px-4 sm:text-lg ${
+                          book.format === "ebook"
+                            ? "bg-coral text-white"
+                            : "bg-ink text-white"
+                        }`}
+                      >
+                        {book.format === "ebook" ? "EBook" : "AudioBook"}
+                      </span>
+                      {book.level && (
+                        <span className="rounded-full bg-coral/12 px-3 py-2 text-sm font-black text-coral sm:px-4 sm:text-lg">
+                          {formatLevel(book.level, language)}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="mt-4 text-2xl font-black leading-tight text-ink sm:text-3xl">
+                      {book.title}
+                    </h3>
+                    <p className="mt-3 text-xl font-bold text-ink/64 sm:text-2xl">
+                      {book.author || t({ vi: "Chưa có tác giả", en: "No author" })}
+                    </p>
                   </div>
-                  <h3 className="mt-4 text-2xl font-black leading-tight text-ink sm:text-3xl">
-                    {book.title}
-                  </h3>
-                  <p className="mt-3 text-xl font-bold text-ink/64 sm:text-2xl">
-                    {book.author || t({ vi: "Chưa có tác giả", en: "No author" })}
-                  </p>
                 </div>
-              </div>
 
-              <div className="mt-5 grid gap-2 text-base font-bold text-ink/68 sm:text-xl">
-                {book.category && (
-                  <p>
-                    <span className="text-ink">{t({ vi: "Thể loại", en: "Category" })}:</span>{" "}
-                    {book.category}
+                <div className="mt-5 grid gap-2 text-base font-bold text-ink/68 sm:text-xl">
+                  {book.category && (
+                    <p>
+                      <span className="text-ink">{t({ vi: "Thể loại", en: "Category" })}:</span>{" "}
+                      {book.category}
+                    </p>
+                  )}
+                  {book.publisher && (
+                    <p>
+                      <span className="text-ink">{t({ vi: "NXB", en: "Publisher" })}:</span>{" "}
+                      {book.publisher}
+                    </p>
+                  )}
+                  {book.provider && (
+                    <p>
+                      <span className="text-ink">{t({ vi: "Đơn vị cung cấp", en: "Provider" })}:</span>{" "}
+                      {book.provider}
+                    </p>
+                  )}
+                </div>
+
+                {book.description && (
+                  <p className="mt-5 line-clamp-3 text-base font-semibold leading-snug text-ink/56 sm:text-xl">
+                    {book.description}
                   </p>
                 )}
-                {book.publisher && (
-                  <p>
-                    <span className="text-ink">{t({ vi: "NXB", en: "Publisher" })}:</span>{" "}
-                    {book.publisher}
-                  </p>
-                )}
-                {book.provider && (
-                  <p>
-                    <span className="text-ink">{t({ vi: "Đơn vị cung cấp", en: "Provider" })}:</span>{" "}
-                    {book.provider}
-                  </p>
-                )}
-              </div>
-
-              {book.description && (
-                <p className="mt-5 line-clamp-3 text-base font-semibold leading-snug text-ink/56 sm:text-xl">
-                  {book.description}
-                </p>
-              )}
-            </article>
-          ))}
-        </div>
-
-        {visibleBooks.length === 0 && (
-          <div className="rounded-3xl bg-white p-6 text-center shadow-kiosk sm:p-10">
-            <p className="text-2xl font-black text-ink sm:text-3xl">
-              {t({ vi: "Không tìm thấy tài liệu phù hợp", en: "No matching item found" })}
-            </p>
+              </article>
+            ))}
           </div>
-        )}
-      </div>
-    </PageShell>
+
+          {visibleBooks.length === 0 && (
+            <div className="rounded-3xl bg-white p-6 text-center shadow-kiosk sm:p-10">
+              <p className="text-2xl font-black text-ink sm:text-3xl">
+                {t({ vi: "Không tìm thấy tài liệu phù hợp", en: "No matching item found" })}
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
   );
 }
