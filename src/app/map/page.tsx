@@ -29,6 +29,15 @@ const floorMapImages = [
 
 type FloorMap = (typeof floorMapImages)[number];
 
+const zoneIconStyles: Record<string, string> = {
+  "bg-coral": "bg-coral shadow-coral/30 ring-coral/20",
+  "bg-teal": "bg-teal shadow-teal/30 ring-teal/20",
+  "bg-amber": "bg-amber shadow-amber/30 ring-amber/20",
+  "bg-leaf": "bg-leaf shadow-leaf/30 ring-leaf/20",
+  "bg-sky-500": "bg-sky-500 shadow-sky-500/30 ring-sky-500/20",
+  "bg-rose-500": "bg-rose-500 shadow-rose-500/30 ring-rose-500/20",
+};
+
 export default function MapPage() {
   const { t } = useLanguage();
   const [activeFloorId, setActiveFloorId] = useState<FloorMap["id"]>("floor-1");
@@ -52,7 +61,7 @@ export default function MapPage() {
     >
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.35fr_0.65fr] xl:gap-8">
         <section className="rounded-[1.5rem] bg-white p-3 shadow-kiosk ring-4 ring-white sm:p-4 lg:rounded-[2rem]">
-          <div className="relative aspect-[1800/1312] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
+          <div className="relative aspect-[1800/1552] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
             <Image
               src={activeFloor.src}
               alt={t(activeFloor.alt)}
@@ -94,10 +103,10 @@ export default function MapPage() {
             return (
               <div
                 key={`${zone.floor.vi}-${zone.name.vi}`}
-                className="flex min-h-28 items-center gap-4 rounded-3xl bg-mist p-5 sm:gap-5 sm:p-6"
+                className="flex min-h-28 items-center gap-4 rounded-3xl bg-white p-5 shadow-kiosk ring-2 ring-white/80 sm:gap-5 sm:p-6"
               >
-                <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl sm:h-16 sm:w-16 ${zone.color} text-white`}>
-                  <Icon className="h-8 w-8 sm:h-[34px] sm:w-[34px]" />
+                <span className={`grid h-16 w-16 shrink-0 place-items-center rounded-2xl text-white shadow-lg ring-4 sm:h-[72px] sm:w-[72px] ${zoneIconStyles[zone.color] ?? zoneIconStyles["bg-coral"]}`}>
+                  <Icon className="h-9 w-9 stroke-[2.8] sm:h-10 sm:w-10" />
                 </span>
                 <div className="min-w-0">
                   <p className="text-base font-black uppercase tracking-[0.12em] text-ink/48 sm:text-xl sm:tracking-[0.14em]">
