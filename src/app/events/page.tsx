@@ -132,54 +132,54 @@ export default function EventsPage() {
         en: "Quick access to EBooks, AudioBooks, and online learning resources.",
       }}
     >
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
         {digitalLibraries.map((site) => (
           <a
             key={site.domain}
             href={site.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group flex min-h-[30rem] flex-col justify-between rounded-[2rem] bg-gradient-to-br ${site.tone} p-6 shadow-kiosk ring-4 ring-white transition active:scale-[0.98]`}
+            className={`group flex min-h-[24rem] flex-col justify-between rounded-[1.5rem] bg-gradient-to-br ${site.tone} p-5 shadow-kiosk ring-4 ring-white transition active:scale-[0.98] sm:min-h-[28rem] sm:p-6 xl:min-h-[30rem] xl:rounded-[2rem]`}
           >
             <div>
-              <div className="grid h-36 place-items-center overflow-hidden rounded-[1.5rem] bg-white p-5 shadow-kiosk">
+              <div className="grid h-28 place-items-center overflow-hidden rounded-[1.5rem] bg-white p-4 shadow-kiosk sm:h-36 sm:p-5">
                 {site.logo ? (
                   <Image
                     src={site.logo}
                     alt={`${site.name} logo`}
                     width={360}
                     height={160}
-                    className="max-h-28 w-full object-contain"
+                    className="max-h-20 w-full object-contain sm:max-h-28"
                   />
                 ) : (
                   <span
-                    className={`whitespace-pre-line text-center text-[2rem] font-black leading-tight ${site.logoTone ?? ""}`}
+                    className={`whitespace-pre-line text-center text-2xl font-black leading-tight sm:text-[2rem] ${site.logoTone ?? ""}`}
                   >
                     {site.logoText}
                   </span>
                 )}
               </div>
 
-              <div className="mt-6 flex items-start gap-4">
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-coral text-white">
-                  <Globe2 size={30} />
+              <div className="mt-5 flex items-start gap-4 sm:mt-6">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-coral text-white sm:h-14 sm:w-14">
+                  <Globe2 className="h-7 w-7 sm:h-[30px] sm:w-[30px]" />
                 </span>
                 <div className="min-w-0">
-                  <h3 className="text-[1.65rem] font-black leading-tight text-ink">
+                  <h3 className="text-2xl font-black leading-tight text-ink sm:text-[1.65rem]">
                     {t({ vi: site.name, en: site.englishName })}
                   </h3>
-                  <p className="mt-2 text-xl font-black text-coral">{site.domain}</p>
+                  <p className="mt-2 break-words text-lg font-black text-coral sm:text-xl">{site.domain}</p>
                 </div>
               </div>
 
-              <p className="mt-5 text-[1.35rem] font-semibold leading-snug text-ink/68">
+              <p className="mt-5 text-lg font-semibold leading-snug text-ink/68 sm:text-[1.35rem]">
                 {t(site.description)}
               </p>
             </div>
 
-            <div className="mt-8 inline-flex h-16 items-center justify-center gap-3 rounded-2xl bg-ink px-6 text-2xl font-black text-white">
+            <div className="mt-6 inline-flex h-14 items-center justify-center gap-3 rounded-2xl bg-ink px-5 text-lg font-black text-white sm:mt-8 sm:h-16 sm:px-6 sm:text-2xl">
               {t({ vi: "Mở website", en: "Open website" })}
-              <ExternalLink size={30} />
+              <ExternalLink className="h-7 w-7 sm:h-[30px] sm:w-[30px]" />
             </div>
           </a>
         ))}

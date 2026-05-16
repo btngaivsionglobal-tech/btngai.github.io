@@ -18,12 +18,12 @@ export default function GuidePage() {
     >
       <ol className="grid gap-5">
         {guideSteps.map((step, index) => (
-          <li key={step.vi} className="flex items-center gap-6 rounded-3xl bg-mist p-7">
-            <span className="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-coral text-4xl font-black text-white">
+          <li key={step.vi} className="flex items-start gap-4 rounded-3xl bg-mist p-5 sm:items-center sm:gap-6 sm:p-7">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-coral text-2xl font-black text-white sm:h-20 sm:w-20 sm:text-4xl">
               {index + 1}
             </span>
-            <p className="text-3xl font-bold leading-snug text-ink">{t(step)}</p>
-            <CheckCircle2 className="ml-auto shrink-0 text-coral" size={46} />
+            <p className="text-xl font-bold leading-snug text-ink sm:text-3xl">{t(step)}</p>
+            <CheckCircle2 className="ml-auto hidden shrink-0 text-coral sm:block" size={46} />
           </li>
         ))}
       </ol>

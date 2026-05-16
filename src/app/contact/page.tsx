@@ -82,17 +82,17 @@ export default function ContactPage() {
         en: "Viet Sin Service contact details and warranty centers.",
       }}
     >
-      <div className="grid grid-cols-[0.82fr_1.18fr] gap-7">
-        <section className="rounded-[2rem] bg-white p-8 shadow-kiosk">
-          <div className="flex h-full min-h-[27rem] flex-col justify-between rounded-[1.5rem] border-4 border-coral/18 bg-[#fff8f1] p-8">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-[0.82fr_1.18fr] xl:gap-7">
+        <section className="rounded-[1.5rem] bg-white p-4 shadow-kiosk sm:p-6 lg:rounded-[2rem] lg:p-8">
+          <div className="flex h-full min-h-[22rem] flex-col justify-between rounded-[1.5rem] border-4 border-coral/18 bg-[#fff8f1] p-5 sm:min-h-[27rem] sm:p-8">
             <div>
-              <p className="text-2xl font-black uppercase tracking-[0.18em] text-coral">
+              <p className="text-lg font-black uppercase tracking-[0.12em] text-coral sm:text-2xl sm:tracking-[0.18em]">
                 Viet Sin
               </p>
-              <h3 className="mt-3 text-6xl font-black leading-none text-graphite">
+              <h3 className="mt-3 text-4xl font-black leading-none text-graphite sm:text-6xl">
                 Service
               </h3>
-              <p className="mt-5 max-w-md text-2xl font-black leading-snug text-coral">
+              <p className="mt-5 max-w-md text-xl font-black leading-snug text-coral sm:text-2xl">
                 {t({
                   vi: "Hãy gọi cho chúng tôi để được chăm sóc tốt nhất",
                   en: "Call us for the best service care",
@@ -100,13 +100,13 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="mt-10 flex items-center gap-5 rounded-3xl bg-white p-6">
-              <Phone className="text-coral" size={58} />
-              <div>
-                <p className="text-xl font-black uppercase tracking-[0.14em] text-ink/48">
+            <div className="mt-8 flex items-center gap-4 rounded-3xl bg-white p-5 sm:mt-10 sm:gap-5 sm:p-6">
+              <Phone className="h-10 w-10 shrink-0 text-coral sm:h-[58px] sm:w-[58px]" />
+              <div className="min-w-0">
+                <p className="text-base font-black uppercase tracking-[0.12em] text-ink/48 sm:text-xl sm:tracking-[0.14em]">
                   {t({ vi: "Tổng đài", en: "Hotline" })}
                 </p>
-                <p className="text-5xl font-black text-red-600">028 37150256</p>
+                <p className="text-3xl font-black text-red-600 sm:text-5xl">028 37150256</p>
               </div>
             </div>
           </div>
@@ -116,18 +116,18 @@ export default function ContactPage() {
           {contactInfo.map((item) => {
             const Icon = item.icon;
             return (
-              <article key={item.label.vi} className="rounded-3xl bg-mist p-7">
-                <div className="flex items-center gap-5">
-                  <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-coral text-white">
-                    <Icon size={34} />
+              <article key={item.label.vi} className="rounded-3xl bg-mist p-5 sm:p-7">
+                <div className="flex items-center gap-4 sm:gap-5">
+                  <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-coral text-white sm:h-16 sm:w-16">
+                    <Icon className="h-8 w-8 sm:h-[34px] sm:w-[34px]" />
                   </span>
-                  <div>
-                    <p className="text-xl font-black uppercase tracking-[0.12em] text-ink/48">
+                  <div className="min-w-0">
+                    <p className="text-base font-black uppercase tracking-[0.1em] text-ink/48 sm:text-xl sm:tracking-[0.12em]">
                       {t(item.label)}
                     </p>
                     <h3
                       className={`mt-2 font-black leading-tight ${
-                        item.highlight ? "text-6xl text-red-600" : "text-4xl text-ink"
+                        item.highlight ? "text-3xl text-red-600 sm:text-6xl" : "break-words text-2xl text-ink sm:text-4xl"
                       }`}
                     >
                       {t(item.value)}
@@ -140,35 +140,35 @@ export default function ContactPage() {
         </section>
       </div>
 
-      <section className="mt-7 rounded-[2rem] bg-white p-8 shadow-kiosk">
+      <section className="mt-5 rounded-[1.5rem] bg-white p-4 shadow-kiosk sm:mt-7 sm:p-6 lg:rounded-[2rem] lg:p-8">
         <div className="mb-6 flex items-center gap-4">
-          <span className="grid h-16 w-16 place-items-center rounded-2xl bg-coral text-white">
-            <Building2 size={34} />
+          <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-coral text-white sm:h-16 sm:w-16">
+            <Building2 className="h-8 w-8 sm:h-[34px] sm:w-[34px]" />
           </span>
-          <h3 className="text-4xl font-black text-ink">
+          <h3 className="text-2xl font-black text-ink sm:text-4xl">
             {t({ vi: "Các trung tâm bảo hành", en: "Warranty centers" })}
           </h3>
         </div>
 
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
           {serviceCenters.map((center) => (
-            <article key={center.region.vi} className="rounded-3xl bg-mist p-6">
-              <p className="w-fit rounded-full bg-coral px-5 py-2 text-xl font-black text-white">
+            <article key={center.region.vi} className="rounded-3xl bg-mist p-5 sm:p-6">
+              <p className="w-fit rounded-full bg-coral px-4 py-2 text-lg font-black text-white sm:px-5 sm:text-xl">
                 {t(center.region)}
               </p>
-              <h4 className="mt-5 text-2xl font-black leading-tight text-ink">
+              <h4 className="mt-5 text-xl font-black leading-tight text-ink sm:text-2xl">
                 {t(center.name)}
               </h4>
-              <p className="mt-4 text-xl font-bold leading-snug text-ink/70">
+              <p className="mt-4 text-lg font-bold leading-snug text-ink/70 sm:text-xl">
                 {t(center.address)}
               </p>
-              <p className="mt-4 text-xl font-black text-ink">
+              <p className="mt-4 text-lg font-black text-ink sm:text-xl">
                 Tel: {center.phone}
               </p>
-              <p className="mt-1 text-xl font-bold text-ink/64">
+              <p className="mt-1 text-lg font-bold text-ink/64 sm:text-xl">
                 Fax: {center.fax}
               </p>
-              <p className="mt-1 text-lg font-bold text-coral">
+              <p className="mt-1 break-words text-base font-bold text-coral sm:text-lg">
                 chamsockhachhang@vsionglobal.com
               </p>
             </article>

@@ -18,7 +18,7 @@ body {
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family:
     "Segoe UI",
     Roboto,
@@ -30,6 +30,10 @@ body {
     radial-gradient(circle at 92% 22%, rgba(98, 99, 102, 0.14), transparent 32rem),
     linear-gradient(135deg, #fffaf4 0%, #f5f1ea 46%, #fff1df 100%);
   color: #333436;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a,

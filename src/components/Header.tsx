@@ -27,13 +27,13 @@ export function Header() {
   }, []);
 
   return (
-    <header className="flex h-24 shrink-0 items-center justify-between gap-6 px-10 xl:px-12">
+    <header className="flex shrink-0 flex-col items-stretch gap-4 px-4 py-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-10 xl:px-12">
       <Link
         href="/"
-        className="flex items-center gap-6 rounded-2xl outline-none transition active:scale-[0.98]"
+        className="flex min-w-0 items-center gap-3 rounded-2xl outline-none transition active:scale-[0.98] sm:gap-5 lg:gap-6"
         aria-label={language === "vi" ? "Về trang chủ" : "Go to home"}
       >
-        <div className="flex h-16 w-48 items-center justify-center">
+        <div className="flex h-12 w-36 shrink-0 items-center justify-center sm:h-14 sm:w-44 lg:h-16 lg:w-48">
           <Image
             src="/images/logo-iread-transparent.png"
             alt="iREAD"
@@ -43,28 +43,28 @@ export function Header() {
             className="h-auto w-full"
           />
         </div>
-        <div>
-          <p className="text-xl font-black uppercase tracking-[0.22em] text-coral">
+        <div className="min-w-0">
+          <p className="text-xs font-black uppercase text-coral sm:text-base lg:text-xl lg:tracking-[0.22em]">
             {language === "vi" ? "Kiosk thông tin" : "Information kiosk"}
           </p>
-          <h1 className="text-[2.35rem] font-black leading-none text-ink">
+          <h1 className="text-2xl font-black leading-none text-ink sm:text-3xl lg:text-[2.35rem]">
             {language === "vi" ? "Thư viện iREAD" : "iREAD Library"}
           </h1>
         </div>
       </Link>
-      <div className="flex items-center gap-4">
-        <div className="rounded-2xl bg-white/90 px-7 py-4 text-3xl font-black text-ink shadow-kiosk">
+      <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:justify-end">
+        <div className="rounded-2xl bg-white/90 px-4 py-3 text-lg font-black text-ink shadow-kiosk sm:text-2xl lg:px-7 lg:py-4 lg:text-3xl">
           {now ? formatTime(now, language) : "--:--"}
         </div>
         <button
           type="button"
           onClick={toggleLanguage}
-          className="flex min-h-16 items-center gap-3 rounded-2xl bg-coral p-2 text-2xl font-black text-white shadow-kiosk active:scale-[0.98]"
+          className="flex min-h-12 items-center gap-2 rounded-2xl bg-coral p-2 text-base font-black text-white shadow-kiosk active:scale-[0.98] sm:min-h-14 sm:text-xl lg:min-h-16 lg:gap-3 lg:text-2xl"
           aria-label={language === "vi" ? "Đổi ngôn ngữ" : "Change language"}
         >
-          <Languages size={30} />
+          <Languages className="h-6 w-6 lg:h-[30px] lg:w-[30px]" />
           <span
-            className={`rounded-xl px-4 py-2 ${
+            className={`rounded-xl px-3 py-2 lg:px-4 ${
               language === "vi" ? "bg-white text-coral" : "text-white/72"
             }`}
           >
@@ -72,7 +72,7 @@ export function Header() {
           </span>
           <span className="text-white/62">/</span>
           <span
-            className={`rounded-xl px-4 py-2 ${
+            className={`rounded-xl px-3 py-2 lg:px-4 ${
               language === "en" ? "bg-white text-coral" : "text-white/72"
             }`}
           >
