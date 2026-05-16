@@ -47,17 +47,18 @@ export function HomeHero() {
           style={{ backgroundImage: `url(${slide.image})` }}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/82 via-ink/48 to-ink/10" />
-      <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-ink/54 to-transparent lg:w-[58rem]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/86 via-ink/46 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/48 via-transparent to-transparent" />
+      <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-ink/46 via-ink/18 to-transparent lg:w-[64rem]" />
       <div className="relative flex h-full min-h-[24rem] max-w-[58rem] flex-col justify-center px-5 pb-24 pt-8 text-white sm:min-h-[28rem] sm:px-8 lg:min-h-[30rem] lg:px-12 lg:pb-28 lg:pt-10">
-        <p className="mb-4 w-fit rounded-2xl bg-coral px-4 py-2 text-base font-black text-white shadow-kiosk sm:text-xl lg:mb-5 lg:px-5 lg:py-3 lg:text-2xl">
+        <p className="mb-5 w-fit rounded-2xl bg-white/92 px-4 py-2 text-base font-black text-coral shadow-[0_10px_30px_rgba(0,0,0,0.22)] sm:text-xl lg:mb-6 lg:px-5 lg:py-3 lg:text-2xl">
           {t({ vi: "Đang trình chiếu thư viện", en: "Library slideshow" })}
         </p>
-        <div className="w-fit max-w-[54rem] rounded-[1.75rem] bg-ink/58 px-4 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.34)] ring-2 ring-white/18 backdrop-blur-sm sm:px-6 sm:py-5 lg:px-7">
-          <h2 className="max-w-[54rem] text-[clamp(2.4rem,8vw,4.15rem)] font-black leading-[1.04] text-white drop-shadow-[0_5px_18px_rgba(0,0,0,0.6)]">
+        <div className="max-w-[54rem] border-l-8 border-coral pl-5 sm:pl-6 lg:pl-7">
+          <h2 className="max-w-[54rem] text-[clamp(2.5rem,8vw,4.45rem)] font-black leading-[1.02] text-white drop-shadow-[0_7px_22px_rgba(0,0,0,0.72)]">
             {t(activeSlide.title)}
           </h2>
-          <p className="mt-4 max-w-[48rem] text-lg font-black leading-snug text-white drop-shadow-[0_4px_14px_rgba(0,0,0,0.58)] sm:text-2xl lg:mt-5 lg:text-[1.62rem]">
+          <p className="mt-5 max-w-[46rem] text-lg font-black leading-snug text-white/92 drop-shadow-[0_5px_16px_rgba(0,0,0,0.72)] sm:text-2xl lg:text-[1.62rem]">
             {t(activeSlide.description)}
           </p>
         </div>
