@@ -114,7 +114,7 @@ export default function SearchPage() {
       }}
     >
       <div className="grid gap-6">
-        <div className="sticky -top-4 z-30 -mx-4 grid gap-4 border-b-4 border-white bg-white px-4 pb-4 pt-4 shadow-kiosk sm:-top-6 sm:-mx-6 sm:px-6 lg:-top-8 lg:-mx-8 lg:px-8 lg:pt-8">
+        <div className="sticky top-0 z-40 -mx-4 grid gap-4 border-b-4 border-white bg-white/96 px-4 pb-4 pt-4 shadow-kiosk backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 lg:pt-8">
           <label className="relative block">
             <Search
               className="pointer-events-none absolute left-5 top-1/2 h-7 w-7 -translate-y-1/2 text-coral sm:left-8 sm:h-9 sm:w-9"
