@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
 import { PageShell } from "@/components/PageShell";
 import { floorZones } from "@/data/kiosk";
@@ -15,35 +16,17 @@ export default function MapPage() {
         en: "Choose an area to identify its floor and general location.",
       }}
     >
-      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.05fr_0.95fr] xl:gap-8">
-        <div className="grid min-h-[30rem] grid-cols-1 gap-4 rounded-[1.5rem] bg-[#edf7f2] p-4 sm:grid-cols-3 sm:grid-rows-3 sm:gap-5 sm:p-6 lg:h-[35rem] lg:rounded-[2rem]">
-          <div className="rounded-3xl bg-teal p-5 text-white sm:col-span-2 lg:p-7">
-            <p className="text-xl font-bold opacity-80 sm:text-2xl">{t({ vi: "Tầng 1", en: "Floor 1" })}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl lg:text-4xl">{t({ vi: "Khu đọc mở", en: "Open reading" })}</h3>
-          </div>
-          <div className="rounded-3xl bg-coral p-5 text-white lg:p-7">
-            <p className="text-xl font-bold opacity-80 sm:text-2xl">{t({ vi: "Tầng 1", en: "Floor 1" })}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl lg:text-4xl">{t({ vi: "Quầy mượn trả", en: "Borrow & return" })}</h3>
-          </div>
-          <div className="rounded-3xl bg-amber p-5 text-ink lg:p-7">
-            <p className="text-xl font-bold opacity-70 sm:text-2xl">{t({ vi: "Tầng 1", en: "Floor 1" })}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl lg:text-4xl">{t({ vi: "Hỗ trợ", en: "Support" })}</h3>
-          </div>
-          <div className="rounded-3xl bg-leaf p-5 text-white sm:col-span-2 lg:p-7">
-            <p className="text-xl font-bold opacity-80 sm:text-2xl">{t({ vi: "Tầng 2", en: "Floor 2" })}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl lg:text-4xl">{t({ vi: "Khu sách chuyên ngành", en: "Subject collections" })}</h3>
-          </div>
-          <div className="rounded-3xl bg-sky-500 p-5 text-white lg:p-7">
-            <p className="text-xl font-bold opacity-80 sm:text-2xl">{t({ vi: "Tầng 2", en: "Floor 2" })}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl lg:text-4xl">{t({ vi: "Máy tính", en: "Computers" })}</h3>
-          </div>
-          <div className="rounded-3xl bg-rose-500 p-5 text-white lg:p-7">
-            <p className="text-xl font-bold opacity-80 sm:text-2xl">{t({ vi: "Tầng 2", en: "Floor 2" })}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl lg:text-4xl">{t({ vi: "Học nhóm", en: "Group study" })}</h3>
-          </div>
-          <div className="rounded-3xl border-4 border-dashed border-ink/20 p-5 text-ink lg:p-7">
-            <p className="text-xl font-bold opacity-70 sm:text-2xl">{t({ vi: "Lối vào", en: "Entrance" })}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl lg:text-4xl">{t({ vi: "Sảnh chính", en: "Main hall" })}</h3>
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.35fr_0.65fr] xl:gap-8">
+        <div className="rounded-[1.5rem] bg-white p-3 shadow-kiosk ring-4 ring-white sm:p-4 lg:rounded-[2rem]">
+          <div className="relative aspect-[2048/1024] w-full overflow-hidden rounded-[1.15rem] bg-mist lg:rounded-[1.5rem]">
+            <Image
+              src="/images/library-map-hoakhanh.jpg"
+              alt={t({ vi: "Sơ đồ thư viện số Hòa Khánh tầng 1 và tầng 2", en: "Hoa Khanh digital library floor plans for floors 1 and 2" })}
+              fill
+              priority
+              sizes="(min-width: 1280px) 65vw, 100vw"
+              className="object-contain"
+            />
           </div>
         </div>
 
