@@ -36,6 +36,20 @@ const digitalLibraries: DigitalLibrary[] = [
     tone: "from-[#eef7ff] to-white",
   },
   {
+    name: "Xưa & Nay",
+    englishName: "Xua & Nay",
+    url: "https://xuavanay.ai/e-books",
+    domain: "xuavanay.ai",
+    logo: "/images/logo-xuavanay.png",
+    logoText: null,
+    logoTone: null,
+    description: {
+      vi: "Kho EBook Xưa & Nay giúp truy cập tài liệu đọc và học tập trực tuyến.",
+      en: "The Xua & Nay EBook library provides quick access to online reading and learning materials.",
+    },
+    tone: "from-[#fff2e8] to-white",
+  },
+  {
     name: "Tủ sách số Waka",
     englishName: "Waka digital bookshelf",
     url: "https://waka.vn/",
