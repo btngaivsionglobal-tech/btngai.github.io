@@ -1,0 +1,7 @@
+<svg width="420" height="300" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Room to Read logo</title>
+  <path d="M50 68C91 58 134 38 184 18C192 15 198 15 206 20C214 17 220 17 227 21C272 39 315 54 370 66" stroke="#0879A4" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="72" y="130" fill="#333333" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">Room</text>
+  <text x="74" y="205" fill="#333333" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">to</text>
+  <text x="72" y="280" fill="#333333" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">Read<tspan font-size="24" baseline-shift="super">&#174;</tspan></text>
+</svg>

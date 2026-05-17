@@ -22,6 +22,20 @@ type DigitalLibrary = {
 
 const digitalLibraries: DigitalLibrary[] = [
   {
+    name: "Room to Read",
+    englishName: "Room to Read",
+    url: "https://literacycloud.org/",
+    domain: "literacycloud.org",
+    logo: "/images/logo-room-to-read.svg",
+    logoText: null,
+    logoTone: null,
+    description: {
+      vi: "Thư viện đọc trực tuyến với sách thiếu nhi, tài nguyên đọc và hoạt động phát triển kỹ năng đọc.",
+      en: "An online reading library with children's books, reading resources, and literacy activities.",
+    },
+    tone: "from-[#eef7ff] to-white",
+  },
+  {
     name: "Tủ sách số Waka",
     englishName: "Waka digital bookshelf",
     url: "https://waka.vn/",
