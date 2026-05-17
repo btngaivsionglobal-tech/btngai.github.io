@@ -122,6 +122,22 @@ export const homeSlides = [
     },
     image: "/images/library-banner-4.jpg",
   },
+  {
+    title: { vi: "Không gian sự kiện thư viện", en: "Library events space" },
+    description: {
+      vi: "Khu trải nghiệm linh hoạt cho hoạt động gặp gỡ, giới thiệu sách và kết nối cộng đồng.",
+      en: "A flexible space for meetups, book showcases, and community connection.",
+    },
+    image: "/images/library-slide-events.png",
+  },
+  {
+    title: { vi: "Tra cứu tài liệu tự phục vụ", en: "Self-service catalog search" },
+    description: {
+      vi: "Tìm kiếm tài liệu, xem vị trí và bắt đầu hành trình đọc sách ngay tại kiosk.",
+      en: "Search materials, check locations, and begin the reading journey right at the kiosk.",
+    },
+    image: "/images/library-slide-search.png",
+  },
 ];
 
 export const books = [
