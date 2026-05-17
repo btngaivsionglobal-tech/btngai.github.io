@@ -30,8 +30,8 @@ const serviceCenters = [
   {
     region: { vi: "Miền Bắc", en: "Northern region" },
     name: {
-      vi: "Chi nhánh Công ty Cổ phần TM DV Vương Đất Kỹ Thuật Số",
-      en: "Vuong Dat Digital Trading Service JSC Branch",
+      vi: "Vùng Đất Kỹ Thuật Số",
+      en: "Digital Land",
     },
     address: {
       vi: "60 Trần Quang Diệu, Đống Đa, Hà Nội",
