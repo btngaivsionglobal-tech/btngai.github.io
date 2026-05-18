@@ -50,6 +50,20 @@ const digitalLibraries: DigitalLibrary[] = [
     tone: "from-[#fff2e8] to-white",
   },
   {
+    name: "Thư viện Đà Nẵng",
+    englishName: "Da Nang Library",
+    url: "http://sachdientu.thuvien.danang.gov.vn/",
+    domain: "sachdientu.thuvien.danang.gov.vn",
+    logo: "/images/logo-thu-vien-da-nang.svg",
+    logoText: null,
+    logoTone: null,
+    description: {
+      vi: "Kho sách điện tử của Thư viện Đà Nẵng phục vụ tra cứu, đọc sách và học tập trực tuyến.",
+      en: "Da Nang Library's e-book collection for searching, reading, and online learning.",
+    },
+    tone: "from-[#eef7ff] to-white",
+  },
+  {
     name: "Tủ sách số Waka",
     englishName: "Waka digital bookshelf",
     url: "https://waka.vn/",

@@ -1,0 +1,22 @@
+<svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Thư viện Đà Nẵng logo</title>
+  <defs>
+    <path id="nameArc" d="M47 110a83 83 0 0 1 166 0" />
+    <clipPath id="discClip">
+      <circle cx="130" cy="106" r="53" />
+    </clipPath>
+  </defs>
+  <text fill="#0B4A86" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="1.4">
+    <textPath href="#nameArc" startOffset="50%" text-anchor="middle">THƯ VIỆN ĐÀ NẴNG</textPath>
+  </text>
+  <g clip-path="url(#discClip)" stroke="#0B4A86" stroke-width="2">
+    <circle cx="130" cy="106" r="52" fill="white" />
+    <path d="M78 93h104M78 101h104M78 109h104M78 117h104M78 125h104M84 85h92M91 77h78M102 69h56" opacity=".55" />
+  </g>
+  <circle cx="130" cy="106" r="53" stroke="#0B4A86" stroke-width="3" />
+  <circle cx="130" cy="106" r="18" fill="white" stroke="#0B4A86" stroke-width="6" />
+  <path d="M49 142c33 0 56 7 72 23v58c-18-16-42-25-72-25v-56Z" fill="#0B4A86" />
+  <path d="M211 142c-33 0-56 7-72 23v58c18-16 42-25 72-25v-56Z" fill="#0B4A86" />
+  <path d="M59 157c25 2 44 9 62 24M201 157c-25 2-44 9-62 24M63 181c24 3 43 10 58 24M197 181c-24 3-43 10-58 24" stroke="white" stroke-width="4" stroke-linecap="round" opacity=".85" />
+  <path d="M121 165c5 9 7 25 9 58M139 165c-5 9-7 25-9 58" stroke="#0B4A86" stroke-width="6" stroke-linecap="round" />
+</svg>
