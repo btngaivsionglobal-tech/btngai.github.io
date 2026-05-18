@@ -64,6 +64,20 @@ const digitalLibraries: DigitalLibrary[] = [
     tone: "from-[#eef7ff] to-white",
   },
   {
+    name: "Thư viện Đại học Đà Nẵng",
+    englishName: "University of Da Nang Library",
+    url: "https://lrel.ued.udn.vn/",
+    domain: "lrel.ued.udn.vn",
+    logo: null,
+    logoText: "ĐẠI HỌC\nĐÀ NẴNG",
+    logoTone: "text-[#073b72]",
+    description: {
+      vi: "Thư viện tài nguyên học liệu điện tử của Đại học Đà Nẵng phục vụ tra cứu và học tập trực tuyến.",
+      en: "The University of Da Nang electronic learning resource library for searching and online study.",
+    },
+    tone: "from-[#f1f5ff] to-white",
+  },
+  {
     name: "Tủ sách số Waka",
     englishName: "Waka digital bookshelf",
     url: "https://waka.vn/",
