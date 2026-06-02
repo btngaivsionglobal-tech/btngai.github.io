@@ -1,0 +1,25 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">ThingLink logo</title>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="36" x2="480" y2="494" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff9d19"/>
+      <stop offset="0.28" stop-color="#ff3f64"/>
+      <stop offset="0.57" stop-color="#ad49f4"/>
+      <stop offset="1" stop-color="#20c7d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="0" fill="url(#bg)"/>
+  <path d="M256 0v512M0 256h512" stroke="white" stroke-width="12"/>
+  <circle cx="256" cy="256" r="70" fill="white"/>
+  <path d="M256 205c9 30 22 43 51 51-29 8-42 21-51 51-9-30-22-43-51-51 29-8 42-21 51-51Z" fill="#c23ad7"/>
+  <path d="M89 361c0-13 14-21 25-14l86 51c11 7 11 23 0 30l-86 51c-11 7-25-1-25-14V361Z" fill="white"/>
+  <path d="M352 354h33l35-35c10-10 27-3 27 11v104c0 14-17 21-27 11l-35-35h-33c-8 0-14-6-14-14v-28c0-8 6-14 14-14Z" fill="white"/>
+  <path d="M439 352c18 21 18 62 0 83M462 326c34 39 34 103 0 142" stroke="white" stroke-width="17" stroke-linecap="round"/>
+  <circle cx="387" cy="128" r="54" fill="white"/>
+  <text x="387" y="158" text-anchor="middle" fill="#bd42dc" font-family="Arial, Helvetica, sans-serif" font-size="89" font-weight="700">?</text>
+  <g transform="translate(78 87) rotate(-41)">
+    <path d="M30 80h42l70 70-21 21-70-70V59Z" fill="white"/>
+    <path d="M22 100 51 71v58L22 100Z" fill="white"/>
+    <rect x="124" y="132" width="37" height="31" rx="6" fill="white"/>
+  </g>
+</svg>

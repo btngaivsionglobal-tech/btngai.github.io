@@ -82,9 +82,9 @@ const digitalLibraries: DigitalLibrary[] = [
     englishName: "ThingLink",
     url: "https://www.thinglink.com/scene/2116798941247832932",
     domain: "thinglink.com",
-    logo: null,
-    logoText: "THING\nLINK",
-    logoTone: "text-[#0f8f6e]",
+    logo: "/images/logo-thinglink.svg",
+    logoText: null,
+    logoTone: null,
     description: {
       vi: "Không gian học tập tương tác ThingLink với nội dung số trực quan và dễ khám phá.",
       en: "An interactive ThingLink learning space with visual digital content for exploration.",
