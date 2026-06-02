@@ -82,7 +82,7 @@ const digitalLibraries: DigitalLibrary[] = [
     englishName: "ThingLink",
     url: "https://www.thinglink.com/scene/2116798941247832932",
     domain: "thinglink.com",
-    logo: "/images/logo-thinglink.svg",
+    logo: "/images/logo-thinglink.jpg",
     logoText: null,
     logoTone: null,
     description: {
