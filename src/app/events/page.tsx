@@ -78,6 +78,20 @@ const digitalLibraries: DigitalLibrary[] = [
     tone: "from-[#f1f5ff] to-white",
   },
   {
+    name: "ThingLink",
+    englishName: "ThingLink",
+    url: "https://www.thinglink.com/scene/2116798941247832932",
+    domain: "thinglink.com",
+    logo: null,
+    logoText: "THING\nLINK",
+    logoTone: "text-[#0f8f6e]",
+    description: {
+      vi: "Không gian học tập tương tác ThingLink với nội dung số trực quan và dễ khám phá.",
+      en: "An interactive ThingLink learning space with visual digital content for exploration.",
+    },
+    tone: "from-[#edfdf7] to-white",
+  },
+  {
     name: "Tủ sách số Waka",
     englishName: "Waka digital bookshelf",
     url: "https://waka.vn/",
